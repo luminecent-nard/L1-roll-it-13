@@ -1,18 +1,17 @@
-#keepgoing stolen from other work
-keep_going = ""
-while keep_going == "":
 
+while True:
     #yes or no
     yesno = input("yes or no: ").lower()
     #identify yes or no
     if yesno == "yes" or yesno == "y":
         print("yes")
-
+        break
     elif yesno == "no" or yesno == "n":
         print("no")
-
+        break
     else:
         print("nuh uh")
+        continue
+print("finished :)")
 
-    keep_going = input("press any key to exit or enter to go again")
 
