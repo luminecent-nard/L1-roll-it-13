@@ -24,7 +24,7 @@ def instructions():
 
 1. whoever rolls the lowest first, goes first
 2. on your initial roll if you roll double, your round points will be doubled
-3. 
+3. write game goal below
  
     """)
 
@@ -132,6 +132,7 @@ while bot_score < game_goal and user_score < game_goal:
     else:
         player_1_points, player_2_points = player_2_points, player_1_points
         first, second = second, first
+        print("the bot rolled lower, you go second")
 
     # loop till win
     while player_1_points < 13 and player_2_points < 13:
@@ -139,10 +140,10 @@ while bot_score < game_goal and user_score < game_goal:
         input("press <enter> to continue this round\n")
 
         # first player rolls the dice and score is updated
-        print("rolling p1...")
+        print(f"rolling {first}...")
         print()
         time.sleep(0.7)
-        print("rolling p2...")
+        print(f"rolling {second}...")
         print()
         time.sleep(0.7)
         player_1_roll = random.randint(1, 6)
@@ -204,7 +205,7 @@ while bot_score < game_goal and user_score < game_goal:
     user_score += user_points
     #generate a list
     game_results = (f"Round: {rounds_played} | user points: {user_points} | bot points: {bot_points} | winner: {winner}"
-                    f"\n{user_score}|{bot_score}")
+                    f"\nscore: {user_score}|{bot_score}")
     game_history.append(game_results)
 
     #show overall scores (round loop)
